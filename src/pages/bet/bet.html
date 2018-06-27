@@ -1,0 +1,44 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Adicionar Palpite</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Nome completo</ion-label>
+      <ion-input [(ngModel)]="name" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating><strong>{{ time1 }}</strong> vai marcar quantos?</ion-label>
+      <ion-input [(ngModel)]="gTime1" type="number"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label floating><strong>{{ time2 }}</strong> vai marcar quantos?</ion-label>
+      <ion-input [(ngModel)]="gTime2" type="number"></ion-input>
+    </ion-item> 
+
+    <ion-item>
+      <ion-label floating>Valor</ion-label>
+      <ion-input [(ngModel)]="value" type="number"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button full clear icon-end (click)="viewHunch()">
+    Simular
+    <ion-icon name="trophy"></ion-icon>
+  </button>
+
+  <button ion-button full icon-end (click)="saveHunch()">
+    Salvar palpite
+    <ion-icon name="checkmark"></ion-icon>
+  </button>
+
+</ion-content>
+  

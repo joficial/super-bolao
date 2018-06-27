@@ -7,12 +7,18 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { CbolaoPage } from '../pages/cbolao/cbolao';
+import { DetailsPage } from '../pages/details/details';
+import { BetPage } from '../pages/bet/bet';
+import { ScoreboardPage } from '../pages/scoreboard/scoreboard';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    CbolaoPage
+    CbolaoPage,
+    DetailsPage,
+    BetPage,
+    ScoreboardPage
   ],
   imports: [
     BrowserModule,
@@ -22,7 +28,10 @@ import { CbolaoPage } from '../pages/cbolao/cbolao';
   entryComponents: [
     MyApp,
     HomePage,
-    CbolaoPage
+    CbolaoPage,
+    DetailsPage,
+    BetPage,
+    ScoreboardPage
   ],
   providers: [
     StatusBar,
