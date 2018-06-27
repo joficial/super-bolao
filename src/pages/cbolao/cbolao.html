@@ -1,0 +1,54 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Novo Bolão</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-title>Preencher todos os campos</ion-title>
+  <!--Times que vão concorrer-->
+  <ion-label>Selecione os times:</ion-label>
+  <ion-list>
+    <ion-item>
+      <ion-label>Times:</ion-label>
+
+      <ion-select [(ngModel)]="teams" multiple="true" cancelText="Cancelar" okText="Feito">
+        <ion-option *ngFor= "let t of _teams" [value]="t.time">
+          {{ t.time }}
+        </ion-option>
+      </ion-select>
+
+    </ion-item>
+
+  </ion-list>
+
+  <!--Dia e hora-->
+  <ion-label>Data e Horário do jogo:</ion-label>
+  <ion-list>
+    <ion-item>
+      <ion-label>Data:</ion-label>
+      <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="date"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Horário:</ion-label>
+      <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="time"></ion-datetime>
+    </ion-item>
+  </ion-list>
+  
+  <!--Valor mínimo da aposta-->
+  <ion-item>
+    <ion-label floating>Valor mínimo da aposta (R$)</ion-label>
+    <ion-input type="number" [(ngModel)]="minValue"></ion-input>
+  </ion-item>
+
+  <!--Botão para finalizar as coisas-->
+  <div style="text-align: center; margin-top: 5em;">
+    <button ion-button icon-start round (click)="create()">
+      <ion-icon name="checkmark"></ion-icon> Criar Bolão
+    </button>
+  </div>
+</ion-content>

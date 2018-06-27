@@ -1,14 +1,21 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+    <ion-title> Super Bolão </ion-title>
+    <ion-buttons end>
+      <!-- Ver os vencedores -->
+      <button ion-button icon-only clear>
+        <ion-icon name="trophy"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+  <ion-buttons>
+    <button ion-button outlines full round (click)="createBolao()">
+      Criar bolão
+    </button>
+  </ion-buttons>
+  
 </ion-content>
