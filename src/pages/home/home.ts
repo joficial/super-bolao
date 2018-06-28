@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController, AlertController, LoadingController } from 'ionic-angular';
 import { CbolaoPage } from '../cbolao/cbolao';
 import { DetailsPage } from '../details/details';
 import { BetPage } from '../bet/bet';
@@ -14,7 +14,12 @@ export class HomePage {
   openBoloes = [];
   closedBoloes = [];
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
+  constructor(
+    public navCtrl: NavController, 
+    public alertCtrl: AlertController,
+    public loadingCtrl: LoadingController
+  ){
+    //this.presentLoading();
     this.getBoloes();
   }
 
@@ -101,5 +106,13 @@ export class HomePage {
 
   //Alterar o placar do jogo
   addScoreboard(id){ this.navCtrl.push(ScoreboardPage, {id : id}); }
+
+  presentLoading() {
+    const loader = this.loadingCtrl.create({
+      content: "Colocando as coisas no lugar",
+      duration: 3000
+    });
+    loader.present();
+  }
 
 }

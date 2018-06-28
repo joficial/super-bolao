@@ -13,8 +13,8 @@
 <ion-content padding>
 
   <ion-buttons>
-    <button ion-button outlines full round (click)="createBolao()">
-      Criar bolão
+    <button ion-button outlines block round (click)="createBolao()">
+      Criar Novo Bolão
     </button>
   </ion-buttons>
 
@@ -47,17 +47,24 @@
         <p>Prêmio em <strong>R$ {{ b.premio }}</strong></p>
         <p>Aposta Mínima: R$ {{ b.minValue }}</p>
 
-        <!-- Detalhes do Bolão -->
-        <button ion-button outline icon-end (click)="goToBolao(b)">
-          Ver
-          <ion-icon name="open"></ion-icon>
-        </button>
-
-        <!-- Gerar uma nova aposta -->
-        <button ion-button outline icon-end (click)="addBet(b)">
-          Apostar
-          <ion-icon name="add"></ion-icon>
-        </button>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <!-- Detalhes do Bolão -->
+              <button ion-button outline block small icon-end (click)="goToBolao(b)">
+                Ver
+                <ion-icon name="open"></ion-icon>
+              </button>
+            </ion-col>
+            <ion-col>
+              <!-- Gerar uma nova aposta -->
+              <button ion-button outline block small icon-end (click)="addBet(b)">
+                Apostar
+                <ion-icon name="add"></ion-icon>
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
 
       </ion-card-content>
     </ion-card>
@@ -75,9 +82,8 @@
         <ion-item text-left>
           {{ b.time1 }} vs {{ b.time2 }}
           <button ion-button clear round 
-                  item-end icon-only color="danger" 
-                  (click)="closeBolao(b.id)">
-            <ion-icon name="close"></ion-icon>
+            item-end icon-only color="danger">
+            <ion-icon name="trash"></ion-icon>
           </button>
         </ion-item>
       </ion-card-header>
@@ -90,18 +96,24 @@
         <p>Prêmio em <strong>R$ {{ b.award }}</strong></p>
         <p>Aposta Mínima: R$ {{ b.minValue }}</p>
 
-        <!-- Detalhes do Bolão -->
-        <button ion-button outline icon-end (click)="goToBolao(b)">
-          Ver
-          <ion-icon name="open"></ion-icon>
-        </button>
-
-        <!-- Atualizar o placar do jogo -->
-        <button ion-button outline icon-end (click)="addScoreboard(b.id)">
-          Placar
-          <ion-icon name="arrow-dropright"></ion-icon>
-        </button>
-
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <!-- Detalhes do Bolão -->
+              <button ion-button outline block small icon-end (click)="goToBolao(b)">
+                Ver
+                <ion-icon name="open"></ion-icon>
+              </button>
+            </ion-col>
+            <ion-col>
+              <!-- Atualizar o placar do jogo -->
+              <button ion-button outline block small icon-end (click)="addScoreboard(b.id)">
+                Placar
+                <ion-icon name="arrow-dropright"></ion-icon>
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
       </ion-card-content>
     </ion-card>
   </ion-list>
