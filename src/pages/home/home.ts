@@ -4,6 +4,7 @@ import { CbolaoPage } from '../cbolao/cbolao';
 import { DetailsPage } from '../details/details';
 import { BetPage } from '../bet/bet';
 import { ScoreboardPage } from '../scoreboard/scoreboard';
+import { WinnersPage } from '../winners/winners';
 
 @Component({
   selector: 'page-home',
@@ -43,6 +44,9 @@ export class HomePage {
       if (tmp.status == 'thumbs-down'){ this.closedBoloes.unshift(tmp); }
     }
   }
+
+  //Ver os vencedores:
+  goToWinners(){ this.navCtrl.push(WinnersPage); }
 
   //Chamar página para criar um novo bolão:
   createBolao(){ this.navCtrl.push(CbolaoPage); }
