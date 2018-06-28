@@ -44,7 +44,10 @@ export class HomePage {
 
       const tmp = JSON.parse(tableBoloes[i]);
 
-      if (tmp.status == 'thumbs-up'){ this.openBoloes.push(tmp); }
+      if (tmp.status == 'thumbs-up'){ 
+        tmp.pre
+        this.openBoloes.push(tmp); 
+      }
 
       if (tmp.status == 'thumbs-down'){ this.closedBoloes.unshift(tmp); }
     }

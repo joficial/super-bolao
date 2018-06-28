@@ -13,18 +13,18 @@ export class BetPage {
   name: string = '';//Nome completo
 
   //Palpite de gTime
-  gTime1: number = -1;
-  gTime2: number = -1;
+  gTime1: number = 0;
+  gTime2: number = 0;
   
-  value: number = -1;//Valor da aposta
+  value: number = 0;//Valor da aposta
 
   //Times que vão jogar
   time1: any = '';
   time2: any = '';
   
-  minValue: number = -1;//Valor mínimo da aposta
-  award: number = -1;//Premio
-  total: number = -1;//Valor total do bolão
+  minValue: number = 0;//Valor mínimo da aposta
+  award: number = 0;//Premio
+  total: number = 0;//Valor total do bolão
 
   constructor(
     public navCtrl: NavController, 
@@ -34,7 +34,7 @@ export class BetPage {
     this.bolao = this.navParams.get('id');
     this.minValue = (+this.navParams.get('minValue'));
     this.award = +this.navParams.get('award');
-    this.total = +this.navParams.get('valorTotal');
+    this.total = +this.navParams.get('totalValue');
     this.time1 = this.navParams.get('time1');
     this.time2 = this.navParams.get('time2');
   }
@@ -55,12 +55,12 @@ export class BetPage {
       let tmp = JSON.parse(tableBoloes[i]);
       if (tmp.id == this.bolao){
         pos = i;
-        const num: number = (parseFloat(v) + parseFloat(tmp.valorTotal));
-        console.log(typeof(v),typeof(tmp.valorTotal));
-        tmp.valorTotal = num;
+        const num: number = (parseFloat(v) + parseFloat(tmp.totalValue));
+        console.log(typeof(v),typeof(tmp.totalValue));
+        tmp.totalValue = num;
 
         const _premio: number = (num * 0.65)
-        tmp.premio = _premio;
+        tmp.award = _premio;
       
         elm = JSON.stringify(tmp);
         break;
@@ -75,8 +75,8 @@ export class BetPage {
 
   //Salvar um palpite
   saveHunch(){
-    if((this.value < 0) || (this.name == '') || 
-      (this.gTime1 < 0) || (this.gTime2 < 0)){
+    if((this.value <= 0) || (this.name == '') || 
+      (this.gTime1 <= 0) || (this.gTime2 <= 0)){
       this.alertIncompletData();
       return;
     }
