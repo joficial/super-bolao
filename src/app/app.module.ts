@@ -10,6 +10,7 @@ import { CbolaoPage } from '../pages/cbolao/cbolao';
 import { DetailsPage } from '../pages/details/details';
 import { BetPage } from '../pages/bet/bet';
 import { ScoreboardPage } from '../pages/scoreboard/scoreboard';
+import { WinnersPage } from '../pages/winners/winners';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ScoreboardPage } from '../pages/scoreboard/scoreboard';
     CbolaoPage,
     DetailsPage,
     BetPage,
-    ScoreboardPage
+    ScoreboardPage,
+    WinnersPage
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,8 @@ import { ScoreboardPage } from '../pages/scoreboard/scoreboard';
     CbolaoPage,
     DetailsPage,
     BetPage,
-    ScoreboardPage
+    ScoreboardPage,
+    WinnersPage
   ],
   providers: [
     StatusBar,
